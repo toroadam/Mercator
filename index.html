@@ -10,15 +10,18 @@
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
   <style>
     #auth-gate{position:fixed;inset:0;background:#1B1E21;display:flex;align-items:center;justify-content:center;z-index:9999;font-family:Inter,system-ui,-apple-system,sans-serif}
-    #auth-gate .gate-box{text-align:center;padding:48px;border-radius:16px;background:#242830;box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:380px;width:90%}
-    #auth-gate img{height:42px;margin-bottom:24px;opacity:.9}
-    #auth-gate h2{color:#fff;font-size:18px;font-weight:500;margin-bottom:8px}
-    #auth-gate p{color:#9ca3af;font-size:13px;margin-bottom:20px}
+    #auth-gate .gate-box{text-align:center;padding:48px 48px 40px;border-radius:16px;background:#242830;box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:400px;width:90%;border-top:3px solid #C8102E}
+    #auth-gate .logo-wrap{margin-bottom:28px}
+    #auth-gate .logo-wrap img{height:52px;opacity:1}
+    #auth-gate .brand-sub{color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin-top:10px}
+    #auth-gate h2{color:#fff;font-size:20px;font-weight:600;margin-bottom:6px}
+    #auth-gate p{color:#9ca3af;font-size:13px;margin-bottom:22px}
     #auth-gate input{width:100%;padding:12px 16px;border-radius:8px;border:1px solid #3f4451;background:#1B1E21;color:#fff;font-size:14px;outline:none;transition:border-color .2s}
-    #auth-gate input:focus{border-color:#3B82F6}
-    #auth-gate button{margin-top:14px;width:100%;padding:12px;border-radius:8px;border:none;background:#3B82F6;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
-    #auth-gate button:hover{background:#2563eb}
+    #auth-gate input:focus{border-color:#C8102E}
+    #auth-gate button{margin-top:14px;width:100%;padding:12px;border-radius:8px;border:none;background:#C8102E;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+    #auth-gate button:hover{background:#a00d24}
     #auth-gate .error{color:#ef4444;font-size:12px;margin-top:10px;display:none}
+    #auth-gate .footer-text{color:#4b5563;font-size:11px;margin-top:24px}
   </style>
 <link rel="stylesheet" href="styles-DQDEQYRS.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-DQDEQYRS.css"></noscript></head>
 <body class="bg-app min-h-dvh overflow-x-hidden">
@@ -26,12 +29,16 @@
   <!-- Password Gate -->
   <div id="auth-gate">
     <div class="gate-box">
-      <img src="assets/toro-logo.svg" alt="Mercator">
+      <div class="logo-wrap">
+        <img src="assets/toro-logo.svg" alt="Toro">
+        <div class="brand-sub">Course Operations Platform</div>
+      </div>
       <h2>Mercator</h2>
-      <p>Enter access code to continue</p>
+      <p>Enter your access code to continue</p>
       <input type="password" id="gate-pw" placeholder="Access code" autocomplete="off">
-      <button onclick="checkGate()">Enter</button>
+      <button onclick="checkGate()">Sign In</button>
       <div class="error" id="gate-err">Incorrect access code</div>
+      <div class="footer-text">© 2026 The Toro Company</div>
     </div>
   </div>
 
